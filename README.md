@@ -4,7 +4,7 @@
 
 This project is going to utilize semantic versioning for its tagging. 
 
-See [semver.org](https://semver.org/) for more information
+See [semver.org](https://semver.org/) for more information.
 
 The general format will be **MAJOR.MINOR.PATCH**, eg. 1.0.4
 
