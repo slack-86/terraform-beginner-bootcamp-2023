@@ -43,9 +43,7 @@ PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-poli
 UBUNTU_CODENAME=jammy
 ```
 
-
-
-### Refactoring into bash scripts
+### Refactoring Terraform CLI installation into bash script
 
 While fixing the Terraform CLI GPG deprecation issues we decided to place the installation steps into a bash script [./bin/install_terraform_cli](./bin/install_terraform_cli). 
 
@@ -53,3 +51,18 @@ While fixing the Terraform CLI GPG deprecation issues we decided to place the in
 - This will allow for easier debugging and ability to manually run the installation process
 - This will allow better portability to other projects that need to install Terraform CLI
 
+### Refactoring AWS CLI installation into bash script 
+
+The AWS CLI installation was refactored into a bash script [./bin/install_aws_cli](./bin/install_aws_cli) to match.
+
+We can check if AWS is installed correctly by running the following command:
+```
+aws sts get-caller-identity
+```
+
+[AWS CLI env vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+```
+$ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+$ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+$ export AWS_DEFAULT_REGION=us-west-2
+```
