@@ -49,7 +49,7 @@ UBUNTU_CODENAME=jammy
 
 While fixing the Terraform CLI GPG deprecation issues we decided to place the installation steps into a bash script [./bin/install_terraform_cli](./bin/install_terraform_cli). 
 
-- This will keep the Terraform gitpod task file [gitpod.yml](./gitpod.yml) tidy.
+- This will keep the Terraform gitpod task file [.gitpod.yml](./.gitpod.yml) tidy.
 - This will allow for easier debugging and ability to manually run the installation process
 - This will allow better portability to other projects that need to install Terraform CLI
 
