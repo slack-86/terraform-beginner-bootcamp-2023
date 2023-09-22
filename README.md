@@ -110,17 +110,22 @@ This will run a plan and pass the change set to terraform to be executed. Apply 
 ```
 $ terraform apply --auto-approve
 ```
+#### Terraform destroy
+```
+$ terraform destroy
+```
+This will destroy resources. --auto-approve can bes used. 
 
-### Terraform state files
+#### Terraform state files
 
 `.terraform.tfstate` contains information about the current state of the infrastructure. This file should never be committed to version control. This file can contrain sensative data, losing this file means losting knowing the state of your infrastructure. 
 
 `.terraform.tfstate.backup` contains the previous version of the state file
 
-### Terraform lock files
+#### Terraform lock files
 
 `.terraform.lock.hcl` contains the locked versioning for the providers or modules used in this project. The terraform lock file should be committed to version control. 
 
-### Terraform directory
+#### Terraform directory
 
 `./.terraform` this hidden folder mainly contains binaries of terraform providers
