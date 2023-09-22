@@ -1,4 +1,10 @@
 terraform {
+  cloud {
+    organization = "slack86"
+    workspaces {
+      name = "terra-house-slack86"
+    }
+  }
   required_providers {
     random = {
       source = "hashicorp/random"
