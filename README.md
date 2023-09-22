@@ -129,3 +129,11 @@ This will destroy resources. --auto-approve can bes used.
 #### Terraform directory
 
 `./.terraform` this hidden folder mainly contains binaries of terraform providers
+
+## Issues with Terraform Cloud Login and Gitpod
+The 'terraform login' commands opens a link to the terraform website in Lynx, the CLI web browser, which is unusable to navigate the Terraform website.
+
+The solution is to press 'P' to print the link and open that in a modern browser to generate the login token.
+
+Once the token is generated, CTRL+C to quit Lynx and paste in the generated login token to continue. 
+
