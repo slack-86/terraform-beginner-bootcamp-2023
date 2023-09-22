@@ -66,3 +66,61 @@ $ export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
 $ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 $ export AWS_DEFAULT_REGION=us-west-2
 ```
+
+## Terraform basics
+
+### Terraform registry
+
+Terraform sources providers and modules from the terraform registry which is located at [registry.terraform.io](https://registry.terraform.io)
+
+- **Providers** are interfaces to APIs that allow the creation of resources in terraform.
+- **Modules** are a way to make large amounts of Terraform code modular, portable, and shareable.
+
+## Terraform console
+
+```
+$ terraform
+```
+The command Terraform with no arguments will list all possible commands
+
+#### Terraform init
+
+```
+$ terraform init
+```
+
+This command will initialize the terraform environment by downloading the binaries for the providers used in the project.
+
+#### Terraform plan
+
+```
+$ terraform plan
+```
+
+This will generate a change set showing what stands to be changed from the current state.
+
+#### Terraform apply
+
+```
+$ terraform apply
+```
+
+This will run a plan and pass the change set to terraform to be executed. Apply will prompt Yes or No. The '--auto-approve' flag allows this to be bypassed.
+
+```
+$ terraform apply --auto-approve
+```
+
+### Terraform state files
+
+`.terraform.tfstate` contains information about the current state of the infrastructure. This file should never be committed to version control. This file can contrain sensative data, losing this file means losting knowing the state of your infrastructure. 
+
+`.terraform.tfstate.backup` contains the previous version of the state file
+
+### Terraform lock files
+
+`.terraform.lock.hcl` contains the locked versioning for the providers or modules used in this project. The terraform lock file should be committed to version control. 
+
+### Terraform directory
+
+`./.terraform` this hidden folder mainly contains binaries of terraform providers
