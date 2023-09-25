@@ -61,5 +61,23 @@ In terraform two types of variable can be set
 
 These can be set to be sensative so they are stored in Vault can not be shown after entry.
 
+## Dealing with Terraform configuration drift
+
+## What happens if a state file is lost
+
+If a state file is lost, all the infrastructure will most likely have to be torn down manually. Terraform import can be used but it's not available for all cloud resources. Check documentation.
+git 
+### Fix Missing Resources with Terraform Import
+
+'terraform import aws_s3_bucket.example bucket_name'
+
+[Terraform Import CLI Docs](https://developer.hashicorp.com/terraform/cli/import)
+
+TODO: import.tf docs
+
+### Fix Manual Configuration
+
+If someone deletes or modifies cloud resources through clickops, the next terraform plan will attempt to put infrastructure back into the expected state to fix *configuration drift*
+
 
 
