@@ -2,9 +2,24 @@
 
 ## Table of Contents
 
--[Semantic Versioning](#semantic-versioning)
--[Install Terraform](#install-the-terraform-cli)
-  -[Consideration with the Terraform CLI changes](#terraform-cli-installation-changes)
+- [Semantic Versioning](#semantic-versioning)
+- [Install the terraform CLI](#install-the-terraform-cli)
+  - [Terraform CLI installation changes](#terraform-cli-installation-changes)
+  - [Considerations for Linux distribution](#considerations-for-linux-distribution)
+  - [Refactoring Terraform CLI installation into bash script](#refactoring-terraform-cli-installation-into-bash-script)
+  - [Refactoring AWS CLI installation into bash script](#refactoring-aws-cli-installation-into-bash-script)
+- [Terraform basics](#terraform-basics)
+  - [Terraform registry](#terraform-registry)
+  - [Terraform console](#terraform-console)
+  - [Terraform init](#terraform-init)
+  - [Terraform plan](#terraform-plan)
+  - [Terraform apply](#terraform-apply)
+  - [Terraform destroy](#terraform-destroy)
+  - [Terraform state files](#terraform-state-files)
+  - [Terraform lock files](#terraform-lock-files)
+  - [Terraform directory](#terraform-directory)
+- [Issues with Terraform Cloud Login and Gitpod](#issues-with-terraform-cloud-login-and-gitpod)
+
 
 ## Semantic Versioning
 
