@@ -136,4 +136,13 @@ The 'terraform login' commands opens a link to the terraform website in Lynx, th
 The solution is to press 'P' to print the link and open that in a modern browser to generate the login token.
 
 Once the token is generated, CTRL+C to quit Lynx and paste in the generated login token to continue. 
-
+```
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "$TERRAFORM_CLOUD_TOKEN"
+    }
+  }
+}
+```
+We have automated the process using a bash script to generate the credential file with the terraform token set in the env vars.
