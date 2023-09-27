@@ -1,10 +1,4 @@
 terraform {
- # cloud {
- #   organization = "slack86"
- #   workspaces {
- #     name = "terra-house-slack86"
- #   }
- #}
   required_providers {
      aws = {
       source  = "hashicorp/aws"
@@ -16,4 +10,12 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
+}
+
+
+resource "aws_s3_bucket" "terrahome_bucket" {
+  bucket = var.bucket_name
+  tags = {
+    userUUID = var.user_uuid
+  }
 }
