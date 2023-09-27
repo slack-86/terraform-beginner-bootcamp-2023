@@ -118,3 +118,41 @@ module "terrahouse_aws" {
 }
 ```
 
+## Consideration when using ChatGPT to write Terraform
+
+LLMs such as ChatGPT may not be trained on the latest information about Terraform and other services. It may produce old examples that are decprecated. 
+
+## Working with files in Terraform
+
+
+### Path Variable
+
+In Terraform there is a special variable called path that allows local paths to be referenced.
+
+- path.module - get the path for the current module
+- path.root - get the path for the root module
+
+[Special Path Variable Docs](https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info)
+
+```tf
+resource "aws_s3_object" "error_html" {
+  bucket = aws_s3_bucket.terrahome_bucket.bucket
+  key = "error.html"
+  source = "${path.root}/public/error.html"
+  etag = filemd5(var.error_html_filepath)  
+}
+```
+
+### File exists function
+
+Terraform function to test the existsance of a file
+```tf
+  validation {
+    condition = fileexists(var.error_html_filepath)
+    error_message = "The provided path for error.html does not exists."
+  }
+```
+
+### FileMD5
+
+filemd5 is a variant of md5 that hashes the contents of a given file rather than a literal string. Allows you to comapre contents of a file to check for changes
