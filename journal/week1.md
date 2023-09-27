@@ -79,5 +79,35 @@ TODO: import.tf docs
 
 If someone deletes or modifies cloud resources through clickops, the next terraform plan will attempt to put infrastructure back into the expected state to fix *configuration drift*
 
+## Terraform Modules
 
+### Terraform Module Structure
+
+It is recommended to create modules in a 'modules' directory.
+
+### Module Sources
+
+[Module Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+}
+```
+Using source the module can be imported from various places, for example:
+- locally
+- GitHub
+- Terraform Registry
+
+### Passing Input Variables
+
+Input variables can be passed to the module by defining them in the module statement. The module must declare these variables in its own 'variables.tf'
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
 
