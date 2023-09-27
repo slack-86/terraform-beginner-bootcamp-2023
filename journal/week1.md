@@ -79,6 +79,13 @@ TODO: import.tf docs
 
 If someone deletes or modifies cloud resources through clickops, the next terraform plan will attempt to put infrastructure back into the expected state to fix *configuration drift*
 
+## Fix using Terraform Refresh
+
+**Deprecated**
+```tf
+terraform apply -refresh-only -auto-approve
+```
+
 ## Terraform Modules
 
 ### Terraform Module Structure
