@@ -156,3 +156,19 @@ Terraform function to test the existsance of a file
 ### FileMD5
 
 filemd5 is a variant of md5 that hashes the contents of a given file rather than a literal string. Allows you to comapre contents of a file to check for changes
+
+### Terraform Locals
+
+This allows local variables to be defined. This is useful to transfer data into another format and have it referenced as a variable.
+
+### Terraform data sources
+
+Datasources allow Terraform to import data from a given data souce such as an AWS account. This is useful to reference cloud resources without importing them.
+
+## Working with JSON
+
+The 'jsonencode' resource allows the json policy to be placed inline in HCL
+```tf
+> jsonencode({"hello"="world"})
+{"hello":"world"}
+```
