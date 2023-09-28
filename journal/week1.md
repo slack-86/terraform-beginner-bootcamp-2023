@@ -156,3 +156,13 @@ Terraform function to test the existsance of a file
 ### FileMD5
 
 filemd5 is a variant of md5 that hashes the contents of a given file rather than a literal string. Allows you to comapre contents of a file to check for changes
+
+### Terraform Locals
+
+This allows local variables 
+
+### Terraform data sources
+
+Datasources allow Terraform to import data from a given data souce such as an AWS account. This is useful to reference cloud resources without importing them.
+
+

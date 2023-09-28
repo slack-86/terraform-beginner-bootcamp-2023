@@ -1,12 +1,12 @@
-resource = "aws_cloudfront_origin_access_control" "default" {
+resource "aws_cloudfront_origin_access_control" "default" {
     name = "OAC ${var.bucket_name}"
     description = "Origin Access Control for static website hosting ${var.bucket_name}"
     origin_access_control_origin_type = "s3"
     signing_behavior = "always"
-    signing_behavior = "sigv4"
+    signing_protocol = "sigv4"
 }
 
-local = {
+locals {
     s3_origin_id = "MyS3Origin"
 }
 
@@ -22,11 +22,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   comment             = "Terrahome CDN ${var.bucket_name}"
   default_root_object = "index.html"
 
-  logging_config {
-    include_cookies = false
-    bucket          = "mylogs.s3.amazonaws.com"
-    prefix          = "myprefix"
-  }
+  #logging_config {
+  #  include_cookies = false
+  #   bucket          = "mylogs.s3.amazonaws.com"
+  #  prefix          = "myprefix"
+  #}
 
  # aliases = ["mysite.example.com", "yoursite.example.com"]
 
