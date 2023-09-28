@@ -184,3 +184,27 @@ Plain data values such as Local Values and Input Variables don't have any side-e
 
 [Terraform Data Docs](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
 
+## Provisioners
+
+Provisioners allow execution of commands on compute resources. They are not recommeded for use by hasicorp because configuration management tools such as ansible are a better fit but the functionality exists.
+
+[Provisioner Docs](https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax)
+
+### Local-exec
+
+This will execute a command on the machine running the terraform commands.
+
+```tf
+resource "aws_instance" "web" {
+  # ...
+
+  provisioner "local-exec" {
+    command = "echo The server's IP address is ${self.private_ip}"
+  }
+}
+```
+
+### Remote-exec
+
+This will execute commands on a remote machine. Credentials will need to be provided, such as SSH credentials.
+
