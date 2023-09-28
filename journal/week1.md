@@ -208,3 +208,15 @@ resource "aws_instance" "web" {
 
 This will execute commands on a remote machine. Credentials will need to be provided, such as SSH credentials.
 
+## For Each Expressions
+
+[For Each Docs](https://developer.hashicorp.com/terraform/language/expressions/for)
+
+Allows to iterate over complex data types in Terraform.
+
+```sh
+[for s in var.list : upper(s)]
+```
+
+This is mostly useful when creating multiples of a cloud resource and reducing repetive terraform code.
+
