@@ -64,3 +64,4 @@ resource "aws_s3_object" "error_html" {
 resource "terraform_data" "content_verison" {
   input = var.content_version
 }
+
