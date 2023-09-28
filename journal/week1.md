@@ -172,3 +172,8 @@ The 'jsonencode' resource allows the json policy to be placed inline in HCL
 > jsonencode({"hello"="world"})
 {"hello":"world"}
 ```
+
+### Changing the Lifecycle of Resources
+
+
+[Meta Arguments Lifecycle Docs](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
