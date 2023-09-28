@@ -177,3 +177,10 @@ The 'jsonencode' resource allows the json policy to be placed inline in HCL
 
 
 [Meta Arguments Lifecycle Docs](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
+## Terraform Data
+
+Plain data values such as Local Values and Input Variables don't have any side-effects to plan against and so they aren't valid in replace_triggered_by. You can use terraform_data's behavior of planning an action each time input changes to indirectly use a plain value to trigger replacement.
+
+[Terraform Data Docs](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
+
