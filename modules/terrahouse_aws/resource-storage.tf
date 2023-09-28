@@ -15,6 +15,20 @@ resource "aws_s3_bucket_website_configuration" "terrahome_configuration" {
     key = "error.html"
   }
 }
+
+#fileset("${path.root}/public/assets","*.{jpeg,png,gif}")
+resource "aws_s3_object" "upload_assets" {
+  for_each = fileset(var.assets_path,"*.{jpeg,png,gif}")
+  bucket = aws_s3_bucket.terrahome_bucket.bucket
+  key = "assets/${each.key}"
+  source = "${var.assets_path}/${each.key}"
+  etag = filemd5("${var.assets_path}/${each.key}")
+    lifecycle {
+    replace_triggered_by = [ terraform_data.content_verison.output ]
+    ignore_changes = [ etag ]
+  }  
+}
+
 resource "aws_s3_object" "index_html" {
   bucket = aws_s3_bucket.terrahome_bucket.bucket
   key = "index.html"
