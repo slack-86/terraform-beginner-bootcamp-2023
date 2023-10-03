@@ -2,6 +2,7 @@ resource "aws_s3_bucket" "terrahome_bucket" {
   bucket = var.bucket_name
   tags = {
     userUUID = var.user_uuid
+    Hello = "world"
   }
 }
 resource "aws_s3_bucket_website_configuration" "terrahome_configuration" {
@@ -43,12 +44,12 @@ resource "aws_s3_object" "error_html" {
       },	
       "Action" = "s3:GetObject",	
       "Resource" = "arn:aws:s3:::${aws_s3_bucket.terrahome_bucket.id}/*",	
-      "Condition" = {	
-      "StringEquals" = {	
-          #"AWS:SourceArn": data.aws_caller_identity.current.arn	
-          "AWS:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.s3_distribution.id}"	
-        }	
-      }	
+#      "Condition" = {	
+#      "StringEquals" = {	
+#          #"AWS:SourceArn": data.aws_caller_identity.current.arn	
+#          "AWS:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.s3_distribution.id}"	
+#        }	
+#      }	
     }	
   })	
 }
