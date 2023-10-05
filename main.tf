@@ -29,3 +29,12 @@ provider "terratowns" {
 #  assets_path = var.assets_path
 #}
 
+resource "terratown_home" "MacroViews" {
+  name = "Macro Views"
+  descriptiom = <<DESCRIPTION
+  Macro photography gives us a glimpse.
+  DESCRIPTION
+  content_version = 1
+  town = "the-nomad-pad"
+  domain_name = "test2143523.cloudfront.net" #module.terrahouse_aws.cloudfront_url
+}
