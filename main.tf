@@ -1,10 +1,10 @@
 terraform {
- # cloud {
- #   organization = "slack86"
- #   workspaces {
- #     name = "terra-house-slack86"
- #   }
- #}
+  cloud {
+    organization = "slack86"
+    workspaces {
+      name = "terra-house-slack86"
+    }
+ }
 
 }
 
