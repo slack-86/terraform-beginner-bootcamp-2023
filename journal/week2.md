@@ -51,3 +51,13 @@ bundle exec ruby server.rb
 All of the code for the server is in the 'server.rb' file.
 
 
+## CRUD
+
+Terraform Provider resources utilize CRUD
+
+- Create
+- Read
+- Update
+- Delete
+
+The four basic acitions of storage
