@@ -15,7 +15,7 @@ terraform {
 }
 
 provider "terratowns" {
-  endpoint = "http://localhost:4567"
+  endpoint = "http://localhost:4567/api"
   user_uuid = "e328f4ab-b99f-421c-84c9-4ccea042c7d1" 
   token = "9b49b3fb-b8e9-483c-b703-97ba88eef8e0"
 }
@@ -29,3 +29,12 @@ provider "terratowns" {
 #  assets_path = var.assets_path
 #}
 
+resource "terratowns_home" "MacroViews" {
+  name = "Macro Views"
+  description = <<DESCRIPTION
+  Macro photos111.
+  DESCRIPTION
+  content_version = 1
+  town = "the-nomad-pad"
+  domain_name = "test2143523.cloudfront.net" #module.terrahouse_aws.cloudfront_url
+}
