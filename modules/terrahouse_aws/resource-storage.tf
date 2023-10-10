@@ -1,5 +1,7 @@
 resource "aws_s3_bucket" "terrahome_bucket" {
-  bucket = var.bucket_name
+  #bucket = var.bucket_name
+  #we want to assign a random bucket name
+  
   tags = {
     userUUID = var.user_uuid
   }

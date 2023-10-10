@@ -5,12 +5,12 @@ terraform {
       version = "1.0.0"
     }
   }
-#  cloud {
-#    organization = "slack86"
-#    workspaces {
-#      name = "terra-house-slack86"
-#    }
-# }
+  cloud {
+    organization = "slack86"
+    workspaces {
+      name = "terra-house-slack86"
+    }
+ }
 
 }
 
@@ -19,15 +19,14 @@ provider "terratowns" {
   user_uuid = var.teacherseat_user_uuid 
   token = var.terratowns_access_token
 }
-#module "terrahouse_aws" {
-#  source = "./modules/terrahouse_aws"
-#  user_uuid = var.teacherseat_user_uuid
-#  bucket_name = var.bucket_name
-#  index_html_filepath = var.index_html_filepath
-#  error_html_filepath = var.error_html_filepath
-#  content_version = var.content_version
-#  assets_path = var.assets_path
-#}
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.teacherseat_user_uuid
+  index_html_filepath = var.index_html_filepath
+  error_html_filepath = var.error_html_filepath
+  content_version = var.content_version
+  assets_path = var.assets_path
+}
 
 resource "terratowns_home" "MacroViews" {
   name = "Macro Views"
@@ -38,5 +37,5 @@ resource "terratowns_home" "MacroViews" {
   DESCRIPTION
   content_version = 1
   town = "missingo"
-  domain_name = "test2143523.cloudfront.net" #module.terrahouse_aws.cloudfront_url
+  domain_name = module.terrahouse_aws.cloudfront_url
 }
