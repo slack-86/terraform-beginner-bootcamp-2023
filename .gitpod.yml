@@ -1,12 +1,12 @@
 tasks:
   - name: terraform
-    env: 
-      TF_LOG: DEBUG
     before: |
       source ./bin/install_terraform_cli
       source ./bin/set_tf_alias
       source ./bin/generate_tfc_credentials
+      source ./bin/build_provider
       cp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
+      cd $PROJECT_ROOT
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial

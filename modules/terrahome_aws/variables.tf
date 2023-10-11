@@ -16,27 +16,9 @@ variable "user_uuid" {
 #    error_message = "S3 bucket name must be between 3 and 63 characters, lowercase letters, numbers, hyphens, and periods allowed, and must start and end with a letter or number."
 #  }
 #}
-variable "index_html_filepath" {
-  description = "The filepath for index.html"
+variable "public_path" {
+  description = "The filepath of the public directory"
   type = string
-
-  validation {
-    condition = fileexists(var.index_html_filepath)
-    error_message = "The provided path for index.html does not exists."
-  }
-
-
-}
-variable "error_html_filepath" {
-  description = "The filepath for error.html"
-  type = string
-
-  validation {
-    condition = fileexists(var.error_html_filepath)
-    error_message = "The provided path for error.html does not exists."
-  }
-
-
 }
 
 variable "content_version" {
@@ -48,9 +30,4 @@ variable "content_version" {
     condition     = var.content_version >= 1
     error_message = "Content version must be a positive integer starting at 1."
   }
-}
-
-variable "assets_path" {
-  description = "path to assets folder"
-  type = string
 }

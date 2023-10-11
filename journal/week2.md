@@ -60,4 +60,5 @@ Terraform Provider resources utilize CRUD
 - Update
 - Delete
 
-The four basic acitions of storage
+The four basic acitions of a storage system
+
