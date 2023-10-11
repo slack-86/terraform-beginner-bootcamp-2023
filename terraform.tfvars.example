@@ -1,6 +1,33 @@
 #bucket_name = "mqe519kd840pbgipeajpa0pxyly1n10h"
-index_html_filepath = "/workspace/terraform-beginner-bootcamp-2023/public/index.html"
-error_html_filepath = "/workspace/terraform-beginner-bootcamp-2023/public/error.html"
-assets_path = "/workspace/terraform-beginner-bootcamp-2023/public/assets"
-content_version = 1
+#index_html_filepath = "/workspace/terraform-beginner-bootcamp-2023/public/index.html"
+#error_html_filepath = "/workspace/terraform-beginner-bootcamp-2023/public/error.html"
+#assets_path = "/workspace/terraform-beginner-bootcamp-2023/public/assets"
+
 terratowns_endpoint = "https://terratowns.cloud/api"
+
+cats = {
+    public_path = "/workspace/terraform-beginner-bootcamp-2023/public/cats"
+    content_version = 1
+}
+
+macromicro = {
+    public_path = "/workspace/terraform-beginner-bootcamp-2023/public/macromicro"
+    content_version = 1
+}
+
+maccheese = {
+    public_path = "/workspace/terraform-beginner-bootcamp-2023/public/maccheese"
+    content_version = 1
+}
+
+
+
+
+#
+#cats_public_path = "/workspace/terraform-beginner-bootcamp-2023/public/cats"
+#cats_content_version = 1
+#macromicro_public_path = "/workspace/terraform-beginner-bootcamp-2023/public/macromicro"
+#macromicro_content_version = 1
+#maccheese_public_path = "/workspace/terraform-beginner-bootcamp-2023/public/maccheese"
+#maccheese_content_version = 1
+#

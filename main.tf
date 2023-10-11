@@ -19,23 +19,54 @@ provider "terratowns" {
   user_uuid = var.teacherseat_user_uuid 
   token = var.terratowns_access_token
 }
-module "terrahouse_aws" {
-  source = "./modules/terrahouse_aws"
+
+module "home_macromicro_hosting" {
+  source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version = var.content_version
-  assets_path = var.assets_path
+  public_path = var.macromicro.public_path
+  content_version = var.macromicro.content_version
 }
 
 resource "terratowns_home" "MacroViews" {
   name = "Macro Views"
   description = <<DESCRIPTION
-  Macro views of the micro world...
-
-  .
+  Macro views of the micro world.
   DESCRIPTION
-  content_version = 1
+  content_version = var.macromicro.content_version
   town = "missingo"
-  domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = module.home_macromicro_hosting.domain_name
+}
+
+module "home_maccheese_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.maccheese.public_path
+  content_version = var.maccheese.content_version
+}
+
+resource "terratowns_home" "MacCheese" {
+  name = "The Perfect Mac and Cheese"
+  description = <<DESCRIPTION
+  Nothing compares to the perfect mac and cheese.
+  DESCRIPTION
+  content_version = var.maccheese.content_version
+  town = "missingo"
+  domain_name = module.home_maccheese_hosting.domain_name
+}
+
+module "home_cats_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.cats.public_path
+  content_version = var.cats.content_version
+}
+
+resource "terratowns_home" "Cats" {
+  name = "Cats!"
+  description = <<DESCRIPTION
+  Just some pics of my cats.
+  DESCRIPTION
+  content_version = var.cats.content_version
+  town = "missingo"
+  domain_name = module.home_cats_hosting.domain_name
 }
