@@ -4,7 +4,7 @@
 module "terrahome_home1" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  public_path = var.home1_public_path
+  public_path = var.home1.public_path
   content_version = var.content_version
 }
 ```
