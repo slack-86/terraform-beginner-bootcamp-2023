@@ -1,6 +1,6 @@
 # Terraform Beginner Bootcamp 2023 - Week 1
 
-# Table of Contents
+## Table of Contents
 
 1. [Root Module Structure](#root-module-structure)
 2. [Terraform and Input Variables](#terraform-and-input-variables)
