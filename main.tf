@@ -33,7 +33,7 @@ resource "terratowns_home" "MacroViews" {
   Macro views of the micro world.
   DESCRIPTION
   content_version = var.macromicro.content_version
-  town = "missingo"
+  town = "nomad-pad"
   domain_name = module.home_macromicro_hosting.domain_name
 }
 
@@ -50,7 +50,7 @@ resource "terratowns_home" "MacCheese" {
   Nothing compares to the perfect mac and cheese.
   DESCRIPTION
   content_version = var.maccheese.content_version
-  town = "missingo"
+  town = "cooker-cove"
   domain_name = module.home_maccheese_hosting.domain_name
 }
 
