@@ -1,5 +1,40 @@
 # Terraform Beginner Bootcamp 2023 - Week 1
 
+## Table of Contents
+
+1. [Root Module Structure](#root-module-structure)
+2. [Terraform and Input Variables](#terraform-and-input-variables)
+   1. [Loading Terraform Variables](#loading-terraform-variables)
+      1. [terraform.tfvars](#terraformtfvars)
+      2. [auto.tfvars](#autotfvars)
+      3. [var flag](#var-flag)
+      4. [var file flag](#var-file-flag)
+      5. [Order of Terraform Variables](#order-of-terraform-variables)
+   2. [Terraform Cloud Variables](#terraform-cloud-variables)
+   3. [Dealing with Terraform Configuration Drift](#dealing-with-terraform-configuration-drift)
+   4. [What Happens If a State File Is Lost](#what-happens-if-a-state-file-is-lost)
+      1. [Fix Missing Resources with Terraform Import](#fix-missing-resources-with-terraform-import)
+      2. [Fix Manual Configuration](#fix-manual-configuration)
+      3. [Fix Using Terraform Refresh](#fix-using-terraform-refresh)
+3. [Terraform Modules](#terraform-modules)
+   1. [Terraform Module Structure](#terraform-module-structure)
+   2. [Module Sources](#module-sources)
+   3. [Passing Input Variables](#passing-input-variables)
+4. [Considerations When Using ChatGPT to Write Terraform](#considerations-when-using-chatgpt-to-write-terraform)
+5. [Working with Files in Terraform](#working-with-files-in-terraform)
+   1. [Path Variable](#path-variable)
+   2. [File Exists Function](#file-exists-function)
+   3. [FileMD5](#filemd5)
+   4. [Terraform Locals](#terraform-locals)
+   5. [Terraform Data Sources](#terraform-data-sources)
+6. [Working with JSON](#working-with-json)
+7. [Changing the Lifecycle of Resources](#changing-the-lifecycle-of-resources)
+8. [Terraform Data](#terraform-data)
+9. [Provisioners](#provisioners)
+   1. [Local-exec](#local-exec)
+   2. [Remote-exec](#remote-exec)
+10. [For Each Expressions](#for-each-expressions)
+
 ## Root Module Structure
 
 Standard Terraform root module structure is as follows:
@@ -20,7 +55,7 @@ PROJECT_ROOT/
 
 [Terraform Input Variable Docs](https://developer.hashicorp.com/terraform/language/values/variables)
 
-### Loading Terraform Varialbes
+### Loading Terraform Variables
 
 #### terraform.tfvars
 
@@ -73,8 +108,6 @@ git
 
 [Terraform Import CLI Docs](https://developer.hashicorp.com/terraform/cli/import)
 
-TODO: import.tf docs
-
 ### Fix Manual Configuration
 
 If someone deletes or modifies cloud resources through clickops, the next terraform plan will attempt to put infrastructure back into the expected state to fix *configuration drift*
@@ -118,7 +151,7 @@ module "terrahouse_aws" {
 }
 ```
 
-## Consideration when using ChatGPT to write Terraform
+## Considerations when using ChatGPT to write Terraform
 
 LLMs such as ChatGPT may not be trained on the latest information about Terraform and other services. It may produce old examples that are decprecated. 
 
