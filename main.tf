@@ -33,7 +33,7 @@ resource "terratowns_home" "MacroViews" {
   Macro views of the micro world.
   DESCRIPTION
   content_version = var.macromicro.content_version
-  town = "nomad-pad"
+  town = "the-nomad-pad"
   domain_name = module.home_macromicro_hosting.domain_name
 }
 

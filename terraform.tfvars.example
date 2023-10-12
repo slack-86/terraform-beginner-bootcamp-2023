@@ -7,17 +7,17 @@ terratowns_endpoint = "https://terratowns.cloud/api"
 
 cats = {
     public_path = "/workspace/terraform-beginner-bootcamp-2023/public/cats"
-    content_version = 2
+    content_version = 3
 }
 
 macromicro = {
     public_path = "/workspace/terraform-beginner-bootcamp-2023/public/macromicro"
-    content_version = 2
+    content_version = 3
 }
 
 maccheese = {
     public_path = "/workspace/terraform-beginner-bootcamp-2023/public/maccheese"
-    content_version = 2
+    content_version = 3
 }
 
 
