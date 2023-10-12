@@ -62,11 +62,11 @@ module "home_cats_hosting" {
 }
 
 resource "terratowns_home" "Cats" {
-  name = "Cats!"
+  name = "Cats"
   description = <<DESCRIPTION
-  Just some pics of my cats.
+  Just some pics of my cats, in the outdoors. 
   DESCRIPTION
   content_version = var.cats.content_version
-  town = "missingo"
+  town = "the-nomad-pad"
   domain_name = module.home_cats_hosting.domain_name
 }
