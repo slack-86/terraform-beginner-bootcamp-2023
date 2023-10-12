@@ -93,7 +93,7 @@ The town name can not be changed in place, the Terrahome needs to be deleted fro
 
 Multiple homes can be published by using multiple module and resource blocks in main.tf eg. 
 
-'''tf
+```tf
 module "home1_hosting" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
@@ -127,11 +127,11 @@ resource "terratowns_home" "home2" {
   town = "cooker-cove"
   domain_name = module.home2_hosting.domain_name
 }
-'''
+```
 
 with the corresponding variables setup as objects within 'variables.tf'
 
-'''tf
+```tf
 variable "home1" {
   type = object({
     public_path = string
@@ -144,11 +144,11 @@ variable "home2" {
     content_version = number
   })
 }
-'''
+```
 
 The variable's values for the 2 homes are set within 'terraform.tfvars' as such:
 
-'''tf
+```tf
 home1 = {
     public_path = "/workspace/terraform-beginner-bootcamp-2023/public/home1"
     content_version = 5
@@ -158,7 +158,7 @@ home2 = {
     public_path = "/workspace/terraform-beginner-bootcamp-2023/public/home2"
     content_version = 6
 }
-'''
+```
 
 
 
